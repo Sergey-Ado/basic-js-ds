@@ -17,9 +17,19 @@ class BinarySearchTree {
     return this.data === null ? null : this;
   }
 
-  add(/* data */) {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  add(data) {
+    if (this.data === null) {
+      this.data = data;
+    } else {
+      if (data < this.data) {
+        if (this.left === null) this.left = new BinarySearchTree();
+        this.left.add(data);
+      }
+      if (data > this.data) {
+        if (this.right === null) this.right = new BinarySearchTree();
+        this.right.add(data);
+      }
+    }
   }
 
   has(/* data */) {
