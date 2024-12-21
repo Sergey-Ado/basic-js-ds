@@ -50,13 +50,15 @@ class BinarySearchTree {
   }
 
   min() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.data === null) return null;
+    if (!this.left) return this.data;
+    return this.left.min();
   }
 
   max() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+    if (this.data === null) return null;
+    if (!this.right) return this.data;
+    return this.right.max();
   }
 }
 
